@@ -9,6 +9,10 @@ min2tray is a program designed to minimize the window of a running program to th
 
 ## Quick Start
 
+```
+pip install min2tray
+```
+
 The following command provides a quick demonstration of how to utilize `min2tray` for minimizing a running program window to the system tray, all while configuring a keyboard shortcut and specifying a custom icon:
 
 ```
