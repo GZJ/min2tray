@@ -122,11 +122,14 @@ def main():
     parser.add_argument('-w', '--window_title', metavar='', help='Title of the window to minimize.')
     parser.add_argument('-i', '--icon_image', metavar='', help='The path to the icon image that will be displayed in the system tray.')
     parser.add_argument('-k', '--hotkey', metavar='',  help='The hotkey combination to trigger the minimize action.')
+    parser.add_argument('-m', '--start_minimized', action='store_true',  help='Starts the application in a minimised state.')
     args = parser.parse_args()
 
     register_global_hotkey(args.hotkey)
     run_cmd(args.command)
     init_window_handle(args.window_title)
+    if args.start_minimized:
+        toggle_window_visibility()
 
     thread_cmd = threading.Thread(target=cmd_wait)
     thread_icon = threading.Thread(target=iconRun, args=(args.icon_image,))
