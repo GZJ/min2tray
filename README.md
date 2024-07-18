@@ -16,7 +16,10 @@ pip install min2tray
 The following command provides a quick demonstration of how to utilize `min2tray` for minimizing a running program window to the system tray, all while configuring a keyboard shortcut and specifying a custom icon:
 
 ```
-min2tray -c="alacritty.exe --working-directory . -t  alacritty"  -w="alacritty"  -i="icon.png" -k="<ctrl>+<alt>+a"
+min2tray -c="alacritty.exe --working-directory . -t  alacritty" \
+         -w="alacritty" \
+         -i="icon.png" \
+         -k="<ctrl>+<alt>+a"
 ```
 
 In this example:
