@@ -2,11 +2,8 @@ from setuptools import setup
 
 setup(
     name="min2tray",
-    version="0.1.0",
-    url=[
-        "https://github.com/gzj/min2tray", 
-        "https://git.sr.ht/~gzj/min2tray"
-    ],
+    version="0.1.1",
+    url="https://github.com/gzj/min2tray",
     author="gzj",
     author_email="gzj00@outlook.com",
     description="Minimize program to system tray",
