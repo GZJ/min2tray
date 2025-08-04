@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "min2tray"
-version = "0.1.1"
+version = "0.2.0"
 description = "Minimize program to system tray"
 readme = "README.md"
 authors = [
