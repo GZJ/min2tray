@@ -1,0 +1,77 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "min2tray"
+version = "0.1.1"
+description = "Minimize program to system tray"
+readme = "README.md"
+authors = [
+    { name = "gzj", email = "gzj00@outlook.com" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["tray", "minimize", "windows", "system-tray"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Desktop Environment",
+    "Topic :: System :: Systems Administration",
+]
+
+dependencies = [
+    "pillow>=11.3.0",
+    "psutil>=7.0.0",
+    "pynput>=1.8.1",
+    "pyobjc-framework-cocoa>=11.1 ; sys_platform == 'darwin'",
+    "pyobjc-framework-quartz>=11.1 ; sys_platform == 'darwin'",
+    "pystray>=0.19.5",
+    "pywebview>=5.4",
+    "pywin32>=311 ; sys_platform == 'win32'",
+]
+
+[project.urls]
+Homepage = "https://github.com/gzj/min2tray"
+Repository = "https://github.com/gzj/min2tray"
+Issues = "https://github.com/gzj/min2tray/issues"
+
+[project.scripts]
+min2tray = "min2tray.cli:main"
+demo = "demo.pywebview_demo:main"
+demo-multi-window = "demo.multi_window_demo:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=7.2.0",
+    "mypy>=1.0.0",
+]
+
+[tool.hatchling.build.targets.wheel]
+packages = ["src/min2tray", "src/demo"]
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
